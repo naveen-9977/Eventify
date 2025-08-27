@@ -1,13 +1,16 @@
 import { Schema, models, model } from "mongoose";
+
 const userSchema = new Schema(
   {
-    name: {
+    // Changed 'name' to 'mobileNumber'
+    mobileNumber: {
       type: String,
-      required: [true, "name is required"],
+      required: [true, "Mobile number is required"],
+      unique: true, // Ensure mobile numbers are unique
     },
     password: {
       type: String,
-      required: [true, "password is required"],
+      required: [true, "Password is required"],
     },
   },
   { timestamps: true }
